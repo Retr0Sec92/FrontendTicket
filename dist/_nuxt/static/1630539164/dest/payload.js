@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/dest", {data:[{}],fetch:[],mutations:[]});

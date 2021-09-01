@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1630539164",layout:"landing",error:null,state:{overlay:a,users:[],roles:[],destination_list:[],bus_list:[],search_list:[],user_detail:void 0,user_info:{isAdmin:a,isUser:a,isLoggedIn:a},tickets:[]},serverRendered:true,routePath:"\u002F",config:{}}}(false));
