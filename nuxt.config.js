@@ -37,7 +37,7 @@ export default {
   ],
 
   axios: {
-    baseURL: 'https://felece-backend.herokuapp/api/v1/',
+    baseURL: 'https://felece-backend.herokuapp.com/api/v1/',
     credentials: false
   },
 
