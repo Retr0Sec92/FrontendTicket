@@ -37,7 +37,7 @@ export default {
   ],
 
   axios: {
-    baseURL: "",
+    baseURL: process.env.NODE_ENV === 'production' ? 'https://felece-backend.herokuapp.com/api/v1/' : 'https://felece-backend.herokuapp.com/api/v1/',
     credentials: false
   },
 

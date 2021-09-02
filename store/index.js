@@ -101,7 +101,7 @@ export const actions = {
         const params = new URLSearchParams();
         params.append("username", payload["username"]);
         params.append('password', payload["password"]);
-        await this.$axios({ method: 'post', url: 'https://felece-backend.herokuapp.com/api/v1/login', headers: {}, data: params })
+        await this.$axios({ method: 'post', url: 'login', headers: {}, data: params })
             .then(res => {
                 localStorage.setItem('access_token', res.data.access_token)
                 localStorage.setItem('refresh_token', res.data.refresh_token)
@@ -117,7 +117,7 @@ export const actions = {
                     duration: 5000,
                 })
         })
-        await this.$axios({ method: 'get', url: 'https://felece-backend.herokuapp.com/api/v1/users/info', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
+        await this.$axios({ method: 'get', url: 'users/info', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
             .then(res => {
                 commit('setUserInfo',res.data)
             })
@@ -134,7 +134,7 @@ export const actions = {
 
     async register({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'post', url: 'https://felece-backend.herokuapp.com/api/v1/users/register', headers: {}, data: payload })
+        await this.$axios({ method: 'post', url: 'users/register', headers: {}, data: payload })
             .then(res => {
                 
                 this.$router.push("/login");
@@ -164,7 +164,7 @@ export const actions = {
 
     async get_users({ commit }) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'get', url: 'https://felece-backend.herokuapp.com/api/v1/users', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
+        await this.$axios({ method: 'get', url: 'users', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
             .then(res => {
                 commit('setUsers',res.data)
             })
@@ -187,7 +187,7 @@ export const actions = {
 
     async save_user({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'post', url: 'https://felece-backend.herokuapp.com/api/v1/users', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
+        await this.$axios({ method: 'post', url: 'users', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
             .then(res => {
                 commit('setUsers',res.data)
             })
@@ -209,7 +209,7 @@ export const actions = {
 
     async remove_user({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'delete', url: 'https://felece-backend.herokuapp.com/api/v1/users/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
+        await this.$axios({ method: 'delete', url: 'users/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
             .then(res => {
                 commit('setUsers',res.data)
             })
@@ -231,7 +231,7 @@ export const actions = {
 
     async get_all_roles({ commit }) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'get', url: 'https://felece-backend.herokuapp.com/api/v1/roles/', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
+        await this.$axios({ method: 'get', url: 'roles/', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
             .then(res => {
                 commit('setRoles',res.data)
             })
@@ -253,7 +253,7 @@ export const actions = {
 
     async set_role_to_user({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'post', url: 'https://felece-backend.herokuapp.com/api/v1/roles/add', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
+        await this.$axios({ method: 'post', url: 'roles/add', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
             .then(res => {
                 commit('setUsers',res.data)
             })
@@ -275,7 +275,7 @@ export const actions = {
 
     async del_role_from_user({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'post', url: 'https://felece-backend.herokuapp.com/api/v1/roles/remove', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
+        await this.$axios({ method: 'post', url: 'roles/remove', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
             .then(res => {
                 commit('setUsers',res.data)
             })
@@ -297,7 +297,7 @@ export const actions = {
 
     async get_destination_by_id({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'get', url: 'https://felece-backend.herokuapp.com/api/v1/destination/' + payload, headers: {} })
+        await this.$axios({ method: 'get', url: 'destination/' + payload, headers: {} })
             .then(res => {
                 commit('setDestinationById',res.data)
             })
@@ -319,7 +319,7 @@ export const actions = {
 
     async get_destinations({ commit }) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'get', url: 'https://felece-backend.herokuapp.com/api/v1/destination', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
+        await this.$axios({ method: 'get', url: 'destination', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
             .then(res => {
                 commit('setDestinations',res.data)
             })
@@ -341,7 +341,7 @@ export const actions = {
 
     async save_destinations({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'post', url: 'https://felece-backend.herokuapp.com/api/v1/destination', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
+        await this.$axios({ method: 'post', url: 'destination', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
             .then(res => {
                 commit('setDestinations',res.data)
             })
@@ -363,7 +363,7 @@ export const actions = {
 
     async update_destinations({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'put', url: 'https://felece-backend.herokuapp.com/api/v1/destination/' + payload.id, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
+        await this.$axios({ method: 'put', url: 'destination/' + payload.id, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
             .then(res => {
                 commit('setDestinations',res.data)
             })
@@ -385,7 +385,7 @@ export const actions = {
 
     async remove_destinations({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'delete', url: 'https://felece-backend.herokuapp.com/api/v1/destination/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
+        await this.$axios({ method: 'delete', url: 'destination/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
             .then(res => {
                 commit('setDestinations',res.data)
             })
@@ -408,7 +408,7 @@ export const actions = {
         async get_busses({ commit }) {
         commit('setOverlay', true)
         
-        await this.$axios({ method: 'get', url: 'https://felece-backend.herokuapp.com/api/v1/bus', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
+        await this.$axios({ method: 'get', url: 'bus', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
             .then(res => {
                 
                 commit('setBusses',res.data)
@@ -432,7 +432,7 @@ export const actions = {
 
     async get_bus_by_İd({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'get', url: 'https://felece-backend.herokuapp.com/api/v1/bus/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, })
+        await this.$axios({ method: 'get', url: 'bus/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, })
             .then(res => {
                 commit('setBusById',res.data)
             })
@@ -455,7 +455,7 @@ export const actions = {
     async save_busses({ commit }, payload) {
         
         commit('setOverlay', true)
-        await this.$axios({ method: 'post', url: 'https://felece-backend.herokuapp.com/api/v1/bus', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
+        await this.$axios({ method: 'post', url: 'bus', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
             .then(res => {
                 
                 commit('setBusses',res.data)
@@ -480,7 +480,7 @@ export const actions = {
     async update_busses({ commit }, payload) {
         
         commit('setOverlay', true)
-        await this.$axios({ method: 'put', url: 'https://felece-backend.herokuapp.com/api/v1/bus/' + payload.id, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
+        await this.$axios({ method: 'put', url: 'bus/' + payload.id, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
             .then(res => {
                 
                 commit('setBusses',res.data)
@@ -505,7 +505,7 @@ export const actions = {
     async remove_busses({ commit }, payload) {
         
         commit('setOverlay', true)
-        await this.$axios({ method: 'delete', url: 'https://felece-backend.herokuapp.com/api/v1/bus/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
+        await this.$axios({ method: 'delete', url: 'bus/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') } })
             .then(res => {
                 
                 commit('setBusses',res.data)
@@ -530,7 +530,7 @@ export const actions = {
     async get_search({ commit }, payload) {
         debugger
         commit('setOverlay', true)
-        await this.$axios({ method: 'post', url: 'https://felece-backend.herokuapp.com/api/v1/bus/search', headers: {}, data: payload })
+        await this.$axios({ method: 'post', url: 'bus/search', headers: {}, data: payload })
             .then(res => {
                 debugger
                 commit('setSearchList',res.data)
@@ -554,7 +554,7 @@ export const actions = {
 
     async buy_ticket({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'post', url: 'https://felece-backend.herokuapp.com/api/v1/ticket', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
+        await this.$axios({ method: 'post', url: 'ticket', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }, data: payload })
             .then(res => {
                 commit('setTickets',res.data)
                 this.$toast.show('Biletiniz başarıyla alınmıştır, biletlerim sayfasından görebilirsiniz !', {
@@ -583,7 +583,7 @@ export const actions = {
     async get_my_tickets({ commit }, payload) {
         
         commit('setOverlay', true)
-        await this.$axios({ method: 'get', url: 'https://felece-backend.herokuapp.com/api/v1/ticket/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }})
+        await this.$axios({ method: 'get', url: 'ticket/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }})
             .then(res => {
                 
                 commit('setTickets',res.data)
@@ -607,7 +607,7 @@ export const actions = {
 
     async get_all_tickets({ commit }) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'get', url: 'https://felece-backend.herokuapp.com/api/v1/ticket', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }})
+        await this.$axios({ method: 'get', url: 'ticket', headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }})
             .then(res => {
                 
                 commit('setTickets',res.data)
@@ -631,7 +631,7 @@ export const actions = {
 
     async postpone_ticket({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'get', url: 'https://felece-backend.herokuapp.com/api/v1/ticket/postpone/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }})
+        await this.$axios({ method: 'get', url: 'ticket/postpone/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }})
             .then(res => {
                 commit('setTickets',res.data)
             })
@@ -653,7 +653,7 @@ export const actions = {
 
     async cancel_ticket({ commit }, payload) {
         commit('setOverlay', true)
-        await this.$axios({ method: 'get', url: 'https://felece-backend.herokuapp.com/api/v1/ticket/cancel/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }})
+        await this.$axios({ method: 'get', url: 'ticket/cancel/' + payload, headers: { 'Authorization': 'Bearer ' + localStorage.getItem('access_token') }})
             .then(res => {
                 
                 commit('setTickets',res.data)
