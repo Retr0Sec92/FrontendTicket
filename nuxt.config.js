@@ -2,6 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   target: 'static',
+  ssr: false,
 
   head: {
     titleTemplate: '%s - felece',
@@ -37,7 +38,7 @@ export default {
   ],
 
   axios: {
-    baseURL: process.env.NODE_ENV === 'production' ? 'https://felece-backend.herokuapp.com/api/v1/' : 'https://felece-backend.herokuapp.com/api/v1/',
+    baseURL: 'https://felece-backend.herokuapp.com/api/v1/',
     credentials: false
   },
 

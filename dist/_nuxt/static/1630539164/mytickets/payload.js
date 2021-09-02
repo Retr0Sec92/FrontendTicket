@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/mytickets", {data:[{}],fetch:[],mutations:[]});
