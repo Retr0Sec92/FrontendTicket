@@ -36,6 +36,7 @@ export default {
     '@nuxtjs/toast',
   ],
 
+  // deneme
   axios: {
     baseURL: 'https://felece-backend.herokuapp.com/api/v1/',
     credentials: false
