@@ -3,70 +3,60 @@
     "name": "bus",
     "path": "/bus",
     "component": "C:\\\\Users\\\\enesa\\\\Desktop\\\\Projects\\\\felece_case\\\\frontend\\\\pages\\\\bus.vue",
-    "chunkName": "pages/bus",
-    "_name": "_5f138154"
+    "chunkName": "pages/bus"
   },
   {
     "name": "dest",
     "path": "/dest",
     "component": "C:\\\\Users\\\\enesa\\\\Desktop\\\\Projects\\\\felece_case\\\\frontend\\\\pages\\\\dest.vue",
-    "chunkName": "pages/dest",
-    "_name": "_0875077e"
+    "chunkName": "pages/dest"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "C:\\\\Users\\\\enesa\\\\Desktop\\\\Projects\\\\felece_case\\\\frontend\\\\pages\\\\login.vue",
-    "chunkName": "pages/login",
-    "_name": "_2cf036bd"
+    "chunkName": "pages/login"
   },
   {
     "name": "main",
     "path": "/main",
     "component": "C:\\\\Users\\\\enesa\\\\Desktop\\\\Projects\\\\felece_case\\\\frontend\\\\pages\\\\main.vue",
-    "chunkName": "pages/main",
-    "_name": "_6b3ca9d6"
+    "chunkName": "pages/main"
   },
   {
     "name": "mytickets",
     "path": "/mytickets",
     "component": "C:\\\\Users\\\\enesa\\\\Desktop\\\\Projects\\\\felece_case\\\\frontend\\\\pages\\\\mytickets.vue",
-    "chunkName": "pages/mytickets",
-    "_name": "_3e1d7fe2"
+    "chunkName": "pages/mytickets"
   },
   {
     "name": "register",
     "path": "/register",
     "component": "C:\\\\Users\\\\enesa\\\\Desktop\\\\Projects\\\\felece_case\\\\frontend\\\\pages\\\\register.vue",
-    "chunkName": "pages/register",
-    "_name": "_44430cff"
+    "chunkName": "pages/register"
   },
   {
     "name": "search",
     "path": "/search",
     "component": "C:\\\\Users\\\\enesa\\\\Desktop\\\\Projects\\\\felece_case\\\\frontend\\\\pages\\\\search.vue",
-    "chunkName": "pages/search",
-    "_name": "_9cee8af8"
+    "chunkName": "pages/search"
   },
   {
     "name": "tickets",
     "path": "/tickets",
     "component": "C:\\\\Users\\\\enesa\\\\Desktop\\\\Projects\\\\felece_case\\\\frontend\\\\pages\\\\tickets.vue",
-    "chunkName": "pages/tickets",
-    "_name": "_8e281f8a"
+    "chunkName": "pages/tickets"
   },
   {
     "name": "users",
     "path": "/users",
     "component": "C:\\\\Users\\\\enesa\\\\Desktop\\\\Projects\\\\felece_case\\\\frontend\\\\pages\\\\users.vue",
-    "chunkName": "pages/users",
-    "_name": "_ae9b2448"
+    "chunkName": "pages/users"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\enesa\\\\Desktop\\\\Projects\\\\felece_case\\\\frontend\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_634893a6"
+    "chunkName": "pages/index"
   }
 ]
