@@ -2,6 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   target: 'static',
+  baseURL:'https://felece-backend.herokuapp.com/api/v1/',
 
   head: {
     titleTemplate: '%s - felece',
@@ -36,9 +37,8 @@ export default {
     '@nuxtjs/toast',
   ],
 
-  // deneme
   axios: {
-    baseURL: 'https://felece-backend.herokuapp.com/api/v1/',
+    baseURL: baseURL,
     credentials: false
   },
 
